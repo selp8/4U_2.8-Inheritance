@@ -6,7 +6,7 @@ But humans have legs and whales don't... But we both breathe air with lungs. We 
 The same can be done with objects (classes) in OOP.
 
 - [Part 1 - Inheritance](#part-1---inheritance)
-- [Part 2 - Super!](#part-2---super)
+- [Part 2 - Super!](#part-2---super-🦸🏻)
 - [Jump to the task](TASK.md)
 
 
@@ -31,21 +31,14 @@ Notice the arrows from each `subclass` to the `Animal` `superclass`? This means 
 
 In this example, the `Dog` class _extends_ the `Animal` class but adds a few things. Similarly, the `Cat` and `Cow` classes also _extend_ the `Animal` class. They _inherit_ the values and methods from the `Animal` class and have the opportunity to add their own.
 
-**Here's how that might look in JavaScript:**
+**Let's look at a simplified example in JavaScript:**
 ```JS
+// The superclass (parent)
 class Animal {
   legs = 2;
-  has_fur;
-  food = "";
 
-  constructor(legs, fur, food) {
+  constructor(legs) {
     this.legs = legs;
-    this.has_fur = fur;
-    this.food = food;
-  }
-
-  eat() {
-    // Nom nom
   }
 
   speak() {
@@ -53,45 +46,48 @@ class Animal {
   }
 }
 
+// A subclass (child) of Animal
 class Dog extends Animal {
+  name = "";
   has_fleas = false;
 
-  constructor(food, fleas) {
+  constructor(name, fleas) {
     this.legs = 4;      // We still have a "legs" attribute
-    this.has_fur = true;
-    this.food = food;
+    this.name = name;
     this.has_fleas = fleas;
   }
 
+  // Override the speak() function
   speak() {
     console.log("WOOF!");
   }  
 }
 ```
 
-For now everything is public - it's easier for demonstrations.
+🤔 Should the `legs` be public? (more on that later)
 
 ### Notice the keyword `extends` on the `Dog` class!
 This means the `Dog` class will _inherit_ everything already created inside the `Animal` class. We can choose to keep it all or overwrite some of it - like overwriting the `speak()` method.
 
 Let's test instances of a generic `Animal` or a `Dog`:
 ```JS
-let a = new Animal(6, false, "Bones");
-let d = new Dog("Kibble", false);
+let anim = new Animal(6);
+let doggo = new Dog("Spot", false);
 
-a.speak();   // "I'm an Animal"
-d.speak();   // "WOOF!"
-a.legs       // 6
-d.legs       // 4
-a.has_fleas  // undefined
-d.has_fleas  // false
+anim.speak();   // "I'm an Animal"
+doggo.speak();  // "WOOF!"
+anim.legs       // 6
+doggo.legs      // 4
+anim.has_fleas  // undefined
+doggo.has_fleas // false
+anim.name       // undefined
+doggo.name      // "Spot"
 ```
 
-Feel free to copy the above example code into a Repl and play around with it. We won't be using the animal classes, they are just an example.
+### ❔Question:
+Can you think of some `subclasses` that would inherit from and _extend_ the `Vehicle` class you created last class?
 
-Hypothetically - would you be able to write the classes for `Cat` and `Cow`?
+<br><br>
 
-### Question:
-Can you think of some `subclasses` that would inherit from and _extend_ the `Vehicle` class you created?
+# Part 2 - Super! 🦸🏻
 
-<br><br><br><br><br><br><br><br>
