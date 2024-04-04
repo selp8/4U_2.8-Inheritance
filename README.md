@@ -5,9 +5,12 @@
 But humans have legs and whales don't... But we both breathe air with lungs. We _inherit_ the trait "lungs" from the mammal _classification_.<br>
 The same can be done with objects (classes) in OOP.
 
-# Lesson
-
+- [Part 1 - Inheritance](#part-1---inheritance)
+- [Part 2 - Super!](#part-2---super)
 - [Jump to the task](TASK.md)
+
+
+# Part 1 - Inheritance
 
 Protection is very important. It is a cornerstone of OOP. But what if we end up with multiple Classes that contain similar code?
 
