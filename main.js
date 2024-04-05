@@ -1,34 +1,15 @@
-class Animal {
-    legs = 2;
-    has_fur;
-    food = "";
-  
-    constructor(legs, fur, food) {
-      this.legs = legs;
-      this.has_fur = fur;
-      this.food = food;
-    }
-  
-    eat() {
-      // Nom nom
-    }
-  
-    speak() {
-      console.log("I'm an Animal");
-    }
-}
-  
-class Dog extends Animal {
-    has_fleas = false;
+/**
+ * ICS4U - Mr. Brash
+ *  
+ * 2.8 - Inheritance & Super! 🦸🏻
+ * 
+ * Read the README.md file (right-click it and select Open Preview)
+ * 
+ * Author: 
+ */
 
-    constructor(food, fleas) {
-        this.legs = 4;      // We still have a "legs" attribute
-        this.has_fur = true;
-        this.food = food;
-        this.has_fleas = fleas;
-    }
+'use strict';
 
-    speak() {
-        console.log("WOOF!");
-    }  
-}
+// The lib.round() function is available
+const lib = require("./library.js");
+
